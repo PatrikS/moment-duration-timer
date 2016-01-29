@@ -1,7 +1,23 @@
 # moment-duration-timer
 A countdown timer plugin for MomentJS Duration
 
-Example usage:
+---
+
+## Installation
+
+**Bower**
+
+`bower install moment-duration-timer`
+
+**In browser**
+
+`<script src="path/to/moment-duration-timer.js"></script>`
+
+Be sure to include moment.js on your page first!
+
+---
+
+## Usage
 
     var duration = moment.duration(10, "s");
 
