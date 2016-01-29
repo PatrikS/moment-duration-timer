@@ -1,6 +1,6 @@
 /**
  * Patriks Moment Duration timer
- * @version 1.0.0
+ * @version 1.0.1
  * @author Patrik Svensson
  * @license The MIT License (MIT)
  */
@@ -119,7 +119,6 @@
 	 */
 	moment.duration.fn.timer.constructor = Timer;
   	
-
 	if (typeof module !== "undefined" && module !== null) {
 		module.exports = moment;
 	} else {
