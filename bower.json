@@ -1,8 +1,8 @@
 {
   "name": "moment-duration-timer",
-  "description": "Timer plugin for Moment Duration",
+  "description": "A countdown timer plugin for MomentJS Duration",
+  "version": "1.0.1",
   "main": "moment-duration-timer.js",
-  "moduleType": [],
   "keywords": [
     "moment",
     "timer",
@@ -12,13 +12,10 @@
     "Patrik Svensson"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/PatrikS/moment-duration-timer/",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "**/.*",    
+    "bower_components"
   ],
   "dependencies": {
     "moment": "^2.11.1"

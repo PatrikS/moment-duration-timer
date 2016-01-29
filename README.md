@@ -1,7 +1,6 @@
 # moment-duration-timer
 A countdown timer plugin for MomentJS Duration
 
----
 
 ## Installation
 
