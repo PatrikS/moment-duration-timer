@@ -1,21 +1,23 @@
 /**
  * Patriks Moment Duration timer
- * @version 1.0.1
+ * @version 1.0.2
  * @author Patrik Svensson
  * @license The MIT License (MIT)
  */
 ;(function() {
-	var _window, moment, _defaults, _emptyFunc;
-		
-	moment = typeof require === "function" ? require("moment") : this.moment;
-	_window = this,
-	_defaults = {
-		interval: 1000,
-	},
-	_emptyFunc = function() {};
+    var moment = typeof require === "function" ? require("moment") : this.moment,
+        _window = this,
+        _defaults = {
+            interval: 1000,
+        },
+	    _emptyFunc = Function.prototype;
 
+    /**
+     * Timer constructor
+     * @constructor
+     */
 	function Timer(duration, options) {
-		this.options = typeof options === "undefined" ? _defaults : {
+		this.options = (typeof options === "undefined" || options === null) ? _defaults : {
 			interval: options.interval || _defaults.interval,
 			onInit: options.onInit || _emptyFunc,
 			onStart: options.onStart || _emptyFunc,
@@ -73,11 +75,11 @@
 
 	Timer.prototype.start = function() {
 		this.intervalTimer = _window.setInterval(
-			(function(self) {         
-	         	return function() {   
-	             	self.elapsed(); 
-	         	}
-	     	})(this), this.options.interval);
+			(function(self) {
+			    return function() {
+			        self.elapsed();
+			    };
+			})(this), this.options.interval);
 		
 		this.running = true;
 		
