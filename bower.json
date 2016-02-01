@@ -1,6 +1,6 @@
 {
   "name": "moment-duration-timer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A countdown timer plugin for Moment.js Duration",
   "main": "moment-duration-timer.js",
   "keywords": [

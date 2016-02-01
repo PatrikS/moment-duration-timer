@@ -1,6 +1,6 @@
 /**
  * Patriks Moment Duration timer
- * @version 1.0.2
+ * @version 1.0.3
  * @author Patrik Svensson
  * @license The MIT License (MIT)
  */
@@ -8,7 +8,7 @@
     var moment = typeof require === "function" ? require("moment") : this.moment,
         _window = this,
         _defaults = {
-            interval: 1000,
+            interval: 1000
         },
 	    _emptyFunc = Function.prototype;
 
@@ -50,7 +50,7 @@
 	}
 
 	Timer.prototype.init = function(){
-		this.options.onInit({ remaining: getRemaining(this.duration) });
+		this.options.onInit({ duration: this.duration, remaining: getRemaining(this.duration) });
 		return this;
 	};
 
@@ -65,7 +65,7 @@
 
 		var remainingTime = this.duration.asMilliseconds();
 
-		this.options.onElapsed({ remaining: getRemaining(this.duration) });
+		this.options.onElapsed({ duration: this.duration, remaining: getRemaining(this.duration) });
 
 		if(remainingTime < this.options.interval){
 			//timer complete??
@@ -83,7 +83,7 @@
 		
 		this.running = true;
 		
-		this.options.onStart({ remaining: getRemaining(this.duration) });
+		this.options.onStart({ duration: this.duration, remaining: getRemaining(this.duration) });
 		return this;
 	};
 
@@ -91,7 +91,7 @@
 		_window.clearInterval(this.intervalTimer);
 		this.running = false;
 
-		this.options.onStop({ remaining: getRemaining(this.duration) });
+		this.options.onStop({ duration: this.duration, remaining: getRemaining(this.duration) });
 		return this;
 	};
 
@@ -102,7 +102,7 @@
 
 		this.duration = moment.duration(this.startDurationInMs, "ms");
 
-		this.options.onReset({ remaining: getRemaining(this.duration) });
+		this.options.onReset({ duration: this.duration, remaining: getRemaining(this.duration) });
 		return this;
 	};
 
